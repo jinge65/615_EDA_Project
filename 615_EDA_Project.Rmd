@@ -18,6 +18,7 @@ require(graphics)
 require(ROCR) 
 require(maps)
 recs <- read.csv('~/Desktop/recs2015_public_v1.csv', na.strings = c("", "NA"))
+refrig1 <- read.csv('~/Desktop/recs2015_public_v1.csv')
 ```
 #1 How region characteristics affect the refrigerator selling
 #1.1 How region characteristics affect the number of refrigerator
@@ -860,7 +861,6 @@ To test our conclusion, use anova again to test whether there is a significant r
 #5 Statistics model for refrigerator data prediction and variable selection for significant factors
 ```{r,warning= FALSE, message= FALSE, echo=FALSE}
 require(MASS)
-refrig1<-read.csv('~/Desktop/recs2015_public_v1.csv')
 recs<-refrig1[-c(which(refrig1$SIZRFRI1==-2),c(which(refrig1$AGERFRI1==-2))),]
 
 recs<-recs[-c(which(refrig1$SIZRFRI1==-2),c(which(refrig1$AGERFRI1==-2))),]
